@@ -6,11 +6,15 @@ Personal Finance & Investment Calculator
   floating-point rounding errors. This script uses Python's 'decimal' 
   module to enforce absolute precision.
 """
+import decimal
 
-from decimal import Decimal, getcontext
+# Use the default precision (28) or increase it if massive calculations are required.
+decimal.getcontext().prec = 28 
 
-# Set precision for financial calculations
-getcontext().prec = 10
+def calcular_interes_compuesto(capital, tasa, tiempo):
+    capital_dec = decimal.Decimal(str(capital))
+    tasa_dec = decimal.Decimal(str(tasa))
+
 
 def calculate_compound_interest(principal, annual_rate, years, contributions_per_month):
     """
@@ -18,11 +22,11 @@ def calculate_compound_interest(principal, annual_rate, years, contributions_per
     Formula used: A = P(1 + r/n)^(nt) + PMT × {[(1 + r/n)^(nt) - 1] / (r/n)}
     """
     # Convert inputs to Decimal for exact precision
-    P = Decimal(str(principal))
-    r = Decimal(str(annual_rate))
-    t = Decimal(str(years))
-    PMT = Decimal(str(contributions_per_month))
-    n = Decimal('12') # Monthly compounding
+    P = decimal.Decimal(str(principal))
+    r = decimal.Decimal(str(annual_rate))
+    t = decimal.Decimal(str(years))
+    PMT = decimal.Decimal(str(contributions_per_month))
+    n = decimal.Decimal('12') # Monthly compounding
     
     # 1. Calculate compound interest for the principal amount
     # P(1 + r/n)^(nt)
