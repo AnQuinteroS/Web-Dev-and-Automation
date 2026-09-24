@@ -22,7 +22,7 @@ def calculate_compound_interest(principal, rate, time_years, n_compounds_per_yea
         result = amount.quantize(decimal.Decimal('0.01'), rounding=decimal.ROUND_HALF_UP)
         return result
         
-    except decimal.InvalidOperation as e:
+    except (decimal.InvalidOperation, decimal.DivisionByZero) as e:
         print(f"Error calculating interest: Invalid input values. Details: {e}")
         return None
 
@@ -30,4 +30,5 @@ if __name__ == "__main__":
     # Test with a large amount to ensure it processes without throwing exceptions
     large_principal = 123456789.00
     result = calculate_compound_interest(large_principal, 0.05, 10)
-    print(f"Future value of ${large_principal:,.2f}: ${result:,.2f}")
+    if result is not None:
+        print(f"Future value of ${large_principal:,.2f}: ${result:,.2f}")
