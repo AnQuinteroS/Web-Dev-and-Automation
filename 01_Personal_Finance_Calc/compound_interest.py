@@ -11,11 +11,6 @@ import decimal
 # Use the default precision (28) or increase it if massive calculations are required.
 decimal.getcontext().prec = 28 
 
-def calcular_interes_compuesto(capital, tasa, tiempo):
-    capital_dec = decimal.Decimal(str(capital))
-    tasa_dec = decimal.Decimal(str(tasa))
-
-
 def calculate_compound_interest(principal, annual_rate, years, contributions_per_month):
     """
     Calculates the future value of an investment with monthly contributions.
