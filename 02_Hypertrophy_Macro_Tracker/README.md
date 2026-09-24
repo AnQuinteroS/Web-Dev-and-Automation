@@ -14,3 +14,4 @@ AI models frequently "hallucinate" nutritional formulas or fail to implement bas
 ## How to Run
 ```bash
 python hypertrophy_macros.py
+```
