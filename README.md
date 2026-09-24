@@ -12,6 +12,3 @@ A precision-focused financial script calculating investment trajectories.
 ### 2. [Hypertrophy Macro Tracker](./02_Hypertrophy_Macro_Tracker/)
 A health and fitness data processor that distributes macronutrients based on physiological parameters.
 * **Technical Highlight:** Demonstrates strict input validation, error handling (`ValueError`), and structured data outputs using Python dictionaries.
-
-## Relevance to AI & RLHF
-Large Language Models (LLMs) frequently struggle with tasks requiring strict mathematical accuracy or domain-specific logic (like financial projections or nutritional constraints). By building these tools, I demonstrate my capacity to evaluate AI outputs for logical consistency, correct module usage, and mathematical precision in real-world scenarios.
